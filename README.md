@@ -62,34 +62,39 @@ Y= A⊕B
 5.	For different input combinations generate the timing diagram.
 
 
-**PROGRAM**
+# PROGRAM :
 
-Program for logic gates and verify its truth table in quartus using Verilog programming
 ```
- Developed by: P JIDHESH
-RegisterNumber: 212223040078
-```
-```
-module logic_gate(a,b,y1,y2,y3,y4,y5,y6,y7);
-input a,b;
-output y1,y2,y3,y4,y5,y6,y7;
-and(y1,a,b);
-or(y2,a,b);
-not(y3,a);
-nand(y4,a,b);
-nor(y5,a,b);
-xor(y6,a,b);
-xnor(y7,a,b);
+module gates_exp1(a, b, c, d, e, x, y, z);
+  input a, b;
+  output c, d, e, x, y, z;
+
+  assign c = a & b;   // AND gate
+  assign d = a | b;   // OR gate
+  assign e = a ^ b;   // XOR gate
+  assign x = ~(a & b); // NAND gate
+  assign y = ~(a | b); // NOR gate
+  assign z = ~(a ^ b); // XNOR gate
+
 endmodule
- ```
 
-https://private-user-images.githubusercontent.com/146162190/315934139-4ec387a6-36b2-4867-bd8f-cae6c532eddc.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3MTA1OTIsIm5iZiI6MTcxMzcxMDI5MiwicGF0aCI6Ii8xNDYxNjIxOTAvMzE1OTM0MTM5LTRlYzM4N2E2LTM2YjItNDg2Ny1iZDhmLWNhZTZjNTMyZWRkYy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMVQxNDM4MTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iNzc3MzQxOGQ1MTZhNmU4NjM4ZTM5MGI2N2I3NzI5YjgyNGFmNWYxY2Q3NDQ1OGU4YTIwZDVjYWYzNDNjNjcyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.cca7pCcYyzgiUGxjazjJ5ttTvZwEsTyw3PnyZtlez6g
-**Logic symbol & Truthtable**
+```
 
-**RTL realization Output:** 
-https://private-user-images.githubusercontent.com/146162190/315934221-40713a0d-ade3-4ecb-bb3e-c07f0570fbc7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3MTA1OTIsIm5iZiI6MTcxMzcxMDI5MiwicGF0aCI6Ii8xNDYxNjIxOTAvMzE1OTM0MjIxLTQwNzEzYTBkLWFkZTMtNGVjYi1iYjNlLWMwN2YwNTcwZmJjNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMVQxNDM4MTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04MTMzM2Y1NmFlNDRmZWUyOThlOGViNzExOGI1NDBjOTE4OTMwZjNiYzhhMjgwY2EzZTRjZTYzZTliYTM5OTQxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.Jc-IbSRmFAAkkC1Foq-XL8ldfmGk6K03cTc8a1UuKMk
-**RTL**
-https://private-user-images.githubusercontent.com/146162190/315935096-61d6aa8c-6e2d-4bc8-906f-23fe7730aed9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3MTA1OTIsIm5iZiI6MTcxMzcxMDI5MiwicGF0aCI6Ii8xNDYxNjIxOTAvMzE1OTM1MDk2LTYxZDZhYThjLTZlMmQtNGJjOC05MDZmLTIzZmU3NzMwYWVkOS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMVQxNDM4MTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01NTE0Y2U0YmZiNGFjOGVlNmZlM2M3YzRkNjFlNzhhOWNkMTAxOGVjYzc3OWQwYzAzZTU5OGE5MDRiYTYyZDY1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9._28o1CJLodg3PruexH9gX_KNbtE4Mnsn-PdzqdOqJ1s
-**Result:**
-Thus the different digital IC’s are studied and the truth table for different logic gates are verified.
+Developed by: JIDHESH P
+Register Number : 212223040078
+
+# Logic symbol & Truthtable:
+![image](https://github.com/arbasil05/study-of-basic-gates/assets/144218037/e7d4403c-9ae7-46ee-a8e9-24da4cfccb7c)
+![image](https://github.com/arbasil05/study-of-basic-gates/assets/144218037/b641689f-1c38-4ac5-9bde-6e3b4b8da819)
+
+# RTL realization Output:
+![image](https://github.com/arbasil05/study-of-basic-gates/assets/144218037/9d62d15b-daf3-4805-95df-73734e5d3162)
+
+# RTL:
+![image](https://github.com/arbasil05/study-of-basic-gates/assets/144218037/eef17cc9-d18d-4d55-a9d5-7f2c849d24dd)
+
+
+# Result:
+Thus the given the truth table of the logic gates have been verified
+
 
